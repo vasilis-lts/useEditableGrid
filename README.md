@@ -1,4 +1,6 @@
-# A custom Hook for Editable grids
+# useEditableGrid
+
+## A custom Hook to display and handle Editable grids
 
 ### Features
 
