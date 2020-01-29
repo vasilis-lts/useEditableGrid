@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import useEditableGrid from "./hooks/useEditableGrid";
+
+const users = [
+  { id: 1, name: "Bill", points: 20 },
+  { id: 2, name: "Stevy", points: 20 },
+  { id: 3, name: "Thomas", points: 30 }
+];
+const hiddenFields = ["id"];
 
 function App() {
+  const submitChanges = values => {
+    console.log(values);
+  };
+  const [grid, handleSubmit] = useEditableGrid(
+    users,
+    submitChanges,
+    hiddenFields
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>useEditableGrid hook</h1>
+      <div>{grid}</div>
+      <div>
+        <button onClick={handleSubmit}>Save Changes</button>
+      </div>
     </div>
   );
 }
