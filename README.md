@@ -8,3 +8,9 @@
   or 'onBlur' (submit when you leave a field after changing it)
 
 Check App.js and hooks/useEditableGrid.js for more info!
+
+### To run
+
+- cd to project root
+- npm install
+- npm start
